@@ -1,2 +1,4 @@
-package bsu.rfe.java.group10.lab2.OMELYASHCHIK.varB18;public class MainFrame {
+package bsu.rfe.java.group10.lab2.OMELYASHCHIK.varB18;
+
+public class MainFrame {
 }
