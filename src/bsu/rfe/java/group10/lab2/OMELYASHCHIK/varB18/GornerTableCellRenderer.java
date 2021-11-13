@@ -14,10 +14,12 @@ public class GornerTableCellRenderer implements TableCellRenderer {
     private JPanel panel = new JPanel();
     private JLabel label = new JLabel();
     private DecimalFormat formatter = (DecimalFormat)NumberFormat.getInstance();
-    //getter
-    public String getNeedle() {
-        return needle;
+    //setter
+
+    public void setNeedle(String needle) {
+        this.needle = needle;
     }
+
     public GornerTableCellRenderer() {
         //максимум знаков после запятой
         formatter.setMaximumFractionDigits(5);
