@@ -7,7 +7,7 @@ public class MainApplication {
             System.out.println("NO ARGUMENTS");
             System.exit(-1);
         }
-        double[] coefficients = new double[args.length];
+        Double[] coefficients = new Double[args.length];
         int i = 0;
         try {
             for (String arg : args) {

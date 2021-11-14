@@ -1,16 +1,16 @@
 package bsu.rfe.java.group10.lab2.OMELYASHCHIK.varB18;
 import javax.swing.table.AbstractTableModel;
 public class GornerTableModel extends AbstractTableModel {
-    public Class<?> getColumnClass(int columnIndex, boolean Flag) {
+    public Class<?> getColumnClass(int columnIndex) {
         return columnIndex == 2 ? Boolean.class : Double.class;
     }
-    private double[] coefficients;
-    private double from;
-    private double to;
-    private double step;
+    private Double[] coefficients;
+    private Double from;
+    private Double to;
+    private Double step;
 
 
-    public GornerTableModel(double[] coefficients, double from, double to, double step) {
+    public GornerTableModel(Double[] coefficients, Double from, Double to, Double step) {
         this.coefficients = coefficients;
         this.from = from;
         this.to = to;

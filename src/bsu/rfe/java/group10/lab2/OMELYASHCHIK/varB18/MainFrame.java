@@ -30,8 +30,8 @@ public class MainFrame extends JFrame {
     private GornerTableCellRenderer renderer = new GornerTableCellRenderer();
     // модель данных с результами вычислений
     private GornerTableModel data;
-    private double[] coefficients;
-    public MainFrame(double[] coefficients) {
+    private Double[] coefficients;
+    public MainFrame(Double[] coefficients) {
         super("Табулирование функции на отрезке");
         this.coefficients = coefficients;
         setSize(WIDTH,HEIGHT);
@@ -152,9 +152,9 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    double from = Double.parseDouble(textFieldFrom.getText());
-                    double to = Double.parseDouble(textFieldTo.getText());
-                    double step = Double.parseDouble(textFieldStep.getText());
+                    Double from = Double.parseDouble(textFieldFrom.getText());
+                    Double to = Double.parseDouble(textFieldTo.getText());
+                    Double step = Double.parseDouble(textFieldStep.getText());
 
                     if (from > to) {
                         double tmp = from;
@@ -168,7 +168,7 @@ public class MainFrame extends JFrame {
                         throw new NumberFormatException();
                     }
 
-                    data  = new GornerTableModel( coefficients, from, to,step);
+                    data  = new GornerTableModel(coefficients, from, to,step);
                     JTable table = new JTable(data);
                     table.setDefaultRenderer(Double.class, renderer);
                     table.setRowHeight(30);
@@ -178,7 +178,6 @@ public class MainFrame extends JFrame {
 
                     saveToTextMenuItem.setEnabled(true);
                     saveToBinMenuItem.setEnabled(true);
-
                     searchValueMenuItem.setEnabled(true);
                 } catch (NumberFormatException exception) {
                     JOptionPane.showMessageDialog(MainFrame.this, "Неверные данные", "Ошибка", JOptionPane.WARNING_MESSAGE);
