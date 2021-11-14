@@ -4,36 +4,32 @@ public class GornerTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex, boolean Flag) {
         return columnIndex == 2 ? Boolean.class : Double.class;
     }
-    private Double[] coefficients;
-    private Double from;
-    private Double to;
-    private Double step;
-    private  Double param;
+    private double[] coefficients;
+    private double from;
+    private double to;
+    private double step;
 
-    public GornerTableModel(Double[] coefficients, Double from, Double to, Double step,Double param) {
+
+    public GornerTableModel(double[] coefficients, double from, double to, double step) {
         this.coefficients = coefficients;
         this.from = from;
         this.to = to;
         this.step = step;
-        this.param = param;
 
     }
 
-    public Double getFrom() {
+    public double getFrom() {
         return from;
     }
 
-    public Double getTo() {
+    public double getTo() {
         return to;
     }
 
-    public Double getStep() {
+    public double getStep() {
         return step;
     }
 
-    public Double getParam() {
-        return param;
-    }
 
     public int getRowCount() {
         //Вычислить количество значений аргумента исходя из шага

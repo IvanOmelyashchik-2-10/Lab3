@@ -41,10 +41,11 @@ public class GornerTableCellRenderer implements TableCellRenderer {
         // Преобразовать double в строку с помощью форматировщика
         String formattedDouble = formatter.format(value);
         double d = Double.parseDouble(formattedDouble);
-        
         // Установить текст надписи равным строковому представлению числа
         label.setText(formattedDouble);
-
+        if((int)d == d - (int)d){
+            panel.setBackground(Color.GREEN);
+        }
         if (column==1 && needle!=null && needle.equals(formattedDouble)) {
             // Номер столбца = 1 (т.е. второй столбец) + иголка не null (значит что-то ищем)
             // + значение иголки совпадает со значением ячейки таблицы - окрасить задний фон
