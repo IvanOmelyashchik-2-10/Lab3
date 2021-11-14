@@ -9,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.TableCellRenderer;
+import java.math.BigDecimal;
+
 public class GornerTableCellRenderer implements TableCellRenderer {
     private String needle = null;
     private JPanel panel = new JPanel();
@@ -38,8 +40,11 @@ public class GornerTableCellRenderer implements TableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         // Преобразовать double в строку с помощью форматировщика
         String formattedDouble = formatter.format(value);
+        double d = Double.parseDouble(formattedDouble);
+        
         // Установить текст надписи равным строковому представлению числа
         label.setText(formattedDouble);
+
         if (column==1 && needle!=null && needle.equals(formattedDouble)) {
             // Номер столбца = 1 (т.е. второй столбец) + иголка не null (значит что-то ищем)
             // + значение иголки совпадает со значением ячейки таблицы - окрасить задний фон
