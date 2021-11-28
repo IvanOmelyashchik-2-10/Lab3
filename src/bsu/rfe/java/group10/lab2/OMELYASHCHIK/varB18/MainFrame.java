@@ -2,6 +2,8 @@ package bsu.rfe.java.group10.lab2.OMELYASHCHIK.varB18;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.*;
 import javax.swing.*;
 
@@ -81,6 +83,7 @@ public class MainFrame extends JFrame {
                     saveToBinFile(new File(fileChooser.getSelectedFile().getName().concat(".bin")));
             }
         };
+
 //Кнопочки
         saveToBinMenuItem = fileMenu.add(saveToBinAction);
         saveToBinMenuItem.setEnabled(false);

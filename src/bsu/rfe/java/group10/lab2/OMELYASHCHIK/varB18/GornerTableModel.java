@@ -8,6 +8,7 @@ public class GornerTableModel extends AbstractTableModel {
     private Double from;
     private Double to;
     private Double step;
+    public  double result  = 0.0;
 
 
     public GornerTableModel(Double[] coefficients, Double from, Double to, Double step) {
@@ -45,30 +46,19 @@ public class GornerTableModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         double x = from + step * rowIndex;
-        double result = 0.0;
+        //double result = 0.0;
         boolean PALIDROME = false;
-        /*if (columnIndex == 0) {
-            return x;
-        }
-        else if (columnIndex == 1) {
+        if (columnIndex == 1 ) {
+            result = 0.0;
             int i = coefficients.length - 1;
             result = coefficients[i--];
             while (i >= 0) {
                 result = result * x + coefficients[i--];
             }
-            return result;
+            
         }
-        else {
-
-            return x < 0;
-        }*/
-        if (columnIndex == 1) {
-            int i = coefficients.length - 1;
-            result = coefficients[i--];
-            while (i >= 0) {
-                result = result * x + coefficients[i--];
-            }
-            int palindrome = (int) result; //
+        if(columnIndex == 2){
+            int palindrome = (int)result; //
             int reverse = 0;
 
             while (palindrome != 0) {
@@ -81,7 +71,9 @@ public class GornerTableModel extends AbstractTableModel {
             } else {
                 PALIDROME = false;
             }
+
         }
+
 
         switch (columnIndex) {
             case 0:
