@@ -55,7 +55,7 @@ public class GornerTableModel extends AbstractTableModel {
             while (i >= 0) {
                 result = result * x + coefficients[i--];
             }
-            
+
         }
         if(columnIndex == 2){
             int palindrome = (int)result; //
